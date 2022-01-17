@@ -1,18 +1,18 @@
-#NFT MARKETPLACE on POLYGON BLOCKCHAIN 
+# NFT MARKETPLACE on POLYGON BLOCKCHAIN 
 
-##To Run the Project 
+## To Run the Project 
 
 Open 3 Terminals at the Folder
 
-###First Terminal 
+### First Terminal 
 `npx hardhat node`
 
-###Second Terminal 
+### Second Terminal 
 `npx hardhat run scripts/deploy.js --network localhost`
 
-From here copy the NFT address and NFTMarket Address and paste it into the *config.js*.
+From here copy the NFT address and NFTMarket Address and paste it into the **config.js**.
 
-###Third Terminal 
+### Third Terminal 
 `npm run dev` 
 
-Then Open Your Localhost in the Browser
+Then Open Your **Localhost** in the Browser.
