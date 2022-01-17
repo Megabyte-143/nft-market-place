@@ -1,7 +1,7 @@
 require("@nomiclabs/hardhat-waffle");
 const fs = require("fs");
 
-const projectID = "2c343c676d29bc70644029b116a36e71a0206ee0";
+const projectID = fs.readFileSync(".projectId").toString();
 const prvKey = fs.readFileSync(".secret").toString();
 
 module.exports = {
@@ -18,5 +18,13 @@ module.exports = {
       accounts: [prvKey]
     }
   },
-  solidity: "0.8.4",
+  solidity: {
+    version: "0.8.4",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200
+      }
+    }
+  }
 };
