@@ -17,7 +17,7 @@ export default function Home() {
   }, []);
 
   async function loadNFTs() {
-    const provider = new ethers.providers.JsonRpcProvider(rpc_url);
+    const provider = new ethers.providers.JsonRpcProvider("https://matic-mumbai.chainstacklabs.com");
 
     const tokenContract = new ethers.Contract(nftAddress, NFT.abi, provider);
     const marketContract = new ethers.Contract(nftMarketAddress, NFTMarket.abi, provider);
@@ -69,24 +69,22 @@ export default function Home() {
   return (
     <div className="flex justify-center">
       <div className="px-4" style={{ maxWidth: '1600px' }}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4" >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
           {
             nfts.map((nft, i) => (
-
-              <div key={i} className="border shadow rounded-xl overflow-hidden" >
+              <div key={i} className="border shadow rounded-xl overflow-hidden">
                 <img src={nft.image} />
-                <div className="p-4" >
+                <div className="p-4">
                   <p style={{ height: '64px' }} className="text-2xl font-semibold">{nft.name}</p>
-                  <div style={{ height: '70px', overflow: "hidden" }}>
+                  <div style={{ height: '70px', overflow: 'hidden' }}>
                     <p className="text-gray-400">{nft.description}</p>
                   </div>
                 </div>
                 <div className="p-4 bg-black">
                   <p className="text-2xl mb-4 font-bold text-white">{nft.price} MATIC</p>
-                  <button className="w-full bg-pink-500 text-white font-bold py-2 px-12 rounded" onClick={() => buyNFT(nft)} >BUY</button>
+                  <button className="w-full bg-pink-500 text-white font-bold py-2 px-12 rounded" onClick={() => buyNFT(nft)}>BUY</button>
                 </div>
               </div>
-
             ))
           }
         </div>

@@ -1,3 +1,3 @@
-export const nftAddress = "0xfa61db53b1bf760fd1ef7cfb5a9058dce8fa6759";
-export const nftMarketAddress = "0xcc1e395cb11b3fa415d984e5fa31d8e131d4635f";
-export const rpc_url = "https://rpc-mumbai.matic.today";
+export const nftAddress = "0x49cdc6944b9eae453818ca0ccab4e73a41bb21a4";
+export const nftMarketAddress = "0x952996ae2d8b20bbb221f3bedba800529bbb2650";
+export const rpc_url = "https://rpc-mumbai.maticvigil.com";
