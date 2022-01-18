@@ -1,14 +1,17 @@
 import '../styles/globals.css'
 import Link from 'next/link'
+import Head from 'next/head'
 
 function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <nav className="border-b p-6">
-        <p className="text-4xl font-bold">Metaverse Marketplace</p>
+      <nav className="border-b p-6 place-content-center">
+        <p className="text-4xl font-bold mt-4  ">
+          MegaByte&apos;s MarketPlace
+        </p>
         <div className="flex mt-4">
           <Link href="/">
-            <a className="mr-8 text-pink-500">
+            <a className="mr-4 text-pink-500">
               Home
             </a>
           </Link>

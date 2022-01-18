@@ -29,6 +29,7 @@ export default function CreateItem() {
             );
             //IPFS of the NFT
             const url = `https://ipfs.infura.io/ipfs/${added.path}`;
+            
             setFileUrl(url);
         } catch (error) {
             console.log(error);
@@ -50,6 +51,7 @@ export default function CreateItem() {
             const added = await client.add(data);
             //IPFS of the data
             const url = `https://ipfs.infura.io/ipfs/${added.path}`;
+            console.log(url)
             createSale(url);
         } catch (error) {
             console.log("Error in Uploading File:", error);
@@ -105,13 +107,13 @@ export default function CreateItem() {
                     onChange={e => updateFormInput({ ...formInput, description: e.target.value })}
                 />
                 <input
-                    placeholder="Asset Price in Matic"
+                    placeholder="Asset Price in MATIC"
                     className="mt-2 border rounded p-4"
                     onChange={e => updateFormInput({ ...formInput, price: e.target.value })}
                 />
                 <input
                     type="file"
-                    placeholder="File"
+                    name="Asset"
                     className="my-4"
                     onChange={onChange}
                 />
@@ -120,9 +122,7 @@ export default function CreateItem() {
                         <img className="rounded mt-4" width="350" src={fileUrl} />
                     )
                 }
-                <button
-                    onClick={createItem}
-                    className="font-bold mt-4 bg-pink-500 text-white rounded p-4 shadow-lg">
+                <button onClick={createItem} className="font-bold mt-4 bg-pink-500 text-white rounded p-4 shadow-lg">
                     Create Digital Asset
                 </button>
             </div>
