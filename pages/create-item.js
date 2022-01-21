@@ -89,7 +89,7 @@ export default function CreateItem() {
             { value: listingPrice }
         );
         await transaction.wait();
-
+        console.log("completed")
         router.push('/');
     }
 
